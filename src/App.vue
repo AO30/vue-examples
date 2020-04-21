@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <sidebar id="sidebar" />
-    <router-view id="router" />
+    <router-view id="router" v-bind:key="$route.path" />
   </div>
 </template>
 
