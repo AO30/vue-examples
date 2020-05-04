@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1>Homeworks</h1>
-
+    <h1>嵌套路由</h1>
     <ul>
       <li v-for="(h, index) in homeworks" :key="index">
-        <router-link :to="`/homeworks/${h.id}`">{{ h.name }}</router-link>
+        <router-link :to="`/example10/homeworks/${h.id}`">
+          {{ h.name }}
+        </router-link>
       </li>
     </ul>
+    <router-view />
   </div>
 </template>
 <script>
@@ -14,10 +16,10 @@ import { LIST_HOMEWORKS } from "@/store/types.js";
 import { mapState } from "vuex";
 export default {
   created() {
-    this.$store.dispacth(LIST_HOMEWORKS);
+    this.$store.dispatch(LIST_HOMEWORKS);
   },
   computed: {
-    ...mapState(["homeworks"])
+    ...mapState(["homework"])
   }
 };
 </script>

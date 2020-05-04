@@ -13,7 +13,7 @@
 </template>
 <script>
 import { mapState } from "vuex";
-import { UPDATEUSER } from "@/store/types.js";
+import { UPDATE_USER } from "@/store/types.js";
 export default {
   data: () => ({
     myUser: {
@@ -23,7 +23,10 @@ export default {
   }),
   methods: {
     change() {
-      this.$store.commit("updateUser", this.myUser);
+      this.$store.commit(UPDATE_USER, {
+        name: this.myUser.name,
+        address: this.myUser.address
+      });
     }
   },
   computed: {

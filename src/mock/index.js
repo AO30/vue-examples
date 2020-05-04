@@ -48,3 +48,14 @@ mock.onPost("login").reply(c => {
       }
     ];
   }
+  return result;
+});
+
+mock.onGet(path("homeworks")).reply(c => {
+  return [
+    200,
+    {
+      homeworks: homeworks
+    }
+  ];
+});

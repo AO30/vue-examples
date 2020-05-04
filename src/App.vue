@@ -2,13 +2,16 @@
   <div id="app">
     <sidebar id="sidebar" />
     <router-view id="router" v-bind:key="$route.path" />
+    <alertdialog />
   </div>
 </template>
-
 <script>
 import sidebar from "@/views/Sidebar";
 export default {
-  components: { sidebar }
+  components: {
+    sidebar,
+    alertdialog: () => import("@/components/AlertDialog.vue")
+  }
 };
 </script>
 
@@ -24,12 +27,10 @@ export default {
 }
 #sidebar {
   width: 300px;
-  display: inline-block;
   border: 1px solid red;
-  vertical-align: top;
 }
 #router {
-  display: inline-block;
   border: 1px solid red;
+  flex: 1;
 }
 </style>
