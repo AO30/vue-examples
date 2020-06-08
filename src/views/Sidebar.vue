@@ -1,9 +1,38 @@
 <template>
-  <div>
-    <h1>Vue示例</h1>
+  <v-card>
+    <v-card-title>
+      <h1>Vue示例</h1>
+    </v-card-title>
+    <v-list>
+      <v-list-item to="/example01">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>welcome</v-list-item-title>
+      </v-list-item>
+      <v-list-group prepend-icon="adb" value="true" no-action="">
+        <template v-slot:activator>
+          <v-list-item-title>路由传参</v-list-item-title>
+        </template>
+        <v-list-item to="/example03/students/12/homeworks/1">
+          <v-list-item-title>sid:12; hid:1</v-list-item-title>
+          <v-list-item-icon>
+            <v-icon>mdi-source-fork</v-icon>
+          </v-list-item-icon>
+        </v-list-item>
+        <v-list-item to="/example03/students/74/homeworks/2">
+          <v-list-item-title>sid:74; hid:2</v-list-item-title>
+          <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+          </v-list-item-icon>
+        </v-list-item>
+      </v-list-group>
+    </v-list>
     <ul>
-      <li><router-link to="/example01">Helloworld</router-link></li>
-      <li><router-link to="/example02">数据驱动&计算属性</router-link></li>
+      <li>
+        <router-link to="/example01">welcome</router-link>
+        <router-link to="/example02">数据驱动&计算属性</router-link>
+      </li>
       <li>
         路由传参
         <ul>
@@ -47,9 +76,15 @@
       <li>
         Vuex
         <ul>
-          <li><router-link to="/example06-01">基本绑定</router-link></li>
-          <li><router-link to="/example06-02">同步更新</router-link></li>
-          <li><router-link to="/example06-03">异步更新</router-link></li>
+          <li>
+            <router-link to="/example06-01">基本绑定</router-link>
+          </li>
+          <li>
+            <router-link to="/example06-02">同步更新</router-link>
+          </li>
+          <li>
+            <router-link to="/example06-03">异步更新</router-link>
+          </li>
         </ul>
       </li>
       <li>
@@ -63,14 +98,29 @@
           </li>
         </ul>
       </li>
-      <li><router-link to="/example08">父组件向子组件传参</router-link></li>
-      <li><router-link to="/example09">Axios拦截器</router-link></li>
-      <li><router-link to="/example10">嵌套路由</router-link></li>
-      <li><router-link to="/example11">整合Sessionstorage</router-link></li>
-      <li><router-link to="/example12">前后端联调 & 跨域</router-link></li>
-      <li><router-link to="/example13">读取excel文件</router-link></li>
+      <li>
+        <router-link to="/example08">父组件向子组件传参</router-link>
+      </li>
+      <li>
+        <router-link to="/example09">Axios拦截器</router-link>
+      </li>
+      <li>
+        <router-link to="/example10">嵌套路由</router-link>
+      </li>
+      <li>
+        <router-link to="/example11">整合Sessionstorage</router-link>
+      </li>
+      <li>
+        <router-link to="/example12">前后端联调 & 跨域</router-link>
+      </li>
+      <li>
+        <router-link to="/example13">读取excel文件</router-link>
+      </li>
+      <li>
+        <router-link to="/example14">Dialog</router-link>
+      </li>
     </ul>
-  </div>
+  </v-card>
 </template>
 <style scoped>
 h1 {
